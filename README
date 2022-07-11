@@ -1,3 +1,5 @@
 A collection of my scripts
 
 - nsh.sh : create new sh file
+- bat.sh : get battery status and capacity
+- temp.sh : get temperature of a sensor
