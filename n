@@ -1,0 +1,27 @@
+#!/bin/sh
+
+FILENAME=$(date +%d-%m-%Y)
+NUM=1
+
+help() {
+  printf "usage: $0 [-hs]\n\t-h : show this message\n\t-s : silent\n"
+  exit $1
+}
+
+while getopts "hs" opt ; do
+  case $opt in 
+    h) help 0;;
+    s) SILENT=1;;
+    '?') usage 1 >&2;;
+  esac
+done
+
+if [ -e "$FILENAME.md" ]; then 
+  while [ -e "$FILENAME-$NUM.md" ]; do
+    NUM=$(( $NUM + 1 ))
+  done
+  FILENAME="$FILENAME-$NUM"
+fi
+
+printf "# $(date "+%D %H:%M")\n" > $FILENAME.md
+[ -z "$SILENT" ] && printf "created $FILENAME.md\n"
