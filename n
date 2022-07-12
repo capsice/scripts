@@ -4,7 +4,7 @@ FILENAME=$(date +%d-%m-%Y)
 NUM=1
 
 help() {
-  printf "usage: $0 [-hs]\n\t-h : show this message\n\t-s : silent\n"
+  printf "usage: $0 [-hs]\n\t-h : show this message\n\t-s : silence output\n"
   exit $1
 }
 
