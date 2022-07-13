@@ -4,3 +4,4 @@ A collection of my scripts
 - bat : get battery status and capacity
 - temp : get temperature of a sensor
 - n : create a new markdown note
+- pass : generate a random password
